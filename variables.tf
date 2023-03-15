@@ -27,4 +27,3 @@ variable "docker-instance-ports" {
   description = "docker-instance-sec-gr-inbound-rules"
   default = [22, 80, 8080]
 }
-

@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
 data "aws_ami" "amazon-linux-2" {
   owners      = ["amazon"]
   most_recent = true
@@ -27,7 +36,6 @@ data "aws_ami" "amazon-linux-2" {
     values = ["amzn2-ami-kernel-5.10-hvm*"]
   }
 }
-
 
 data "template_file" "userdata" {
   template = file("${abspath(path.module)}/userdata.sh")
